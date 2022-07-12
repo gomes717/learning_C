@@ -15,7 +15,7 @@ void *threadDice()
 int main()
 {
 	pthread_t t1;
-    int* returned;
+	int* returned;
 
 	if(pthread_create(&t1, NULL, threadDice, NULL))
 	{
@@ -25,9 +25,9 @@ int main()
 
 	pthread_join(t1, (void**) &returned);
 
-    printf("Address of returned in main: %p\n", returned);
-    printf("result of threadDice: %d\n", *returned);
-    free(returned);
+	printf("Address of returned in main: %p\n", returned);
+	printf("result of threadDice: %d\n", *returned);
+	free(returned);
 
 	return 0;
 }
