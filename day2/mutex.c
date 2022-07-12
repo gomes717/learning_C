@@ -39,7 +39,8 @@ int main()
 	pthread_join(t1, NULL);
 	pthread_join(t2, NULL);
 
-
+	pthread_mutex_destroy(&var_count);
+	
     printf("g_var: %d\n", g_var);
 
 	return 0;
