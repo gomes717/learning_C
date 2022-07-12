@@ -13,8 +13,7 @@
 #include <sys/ioctl.h>
 #include <netdb.h>
 
-//HTTP default port
-#define SERVER_PORT 80
+#define SERVER_PORT 18000
 
 #define MAXLINE 4096
 #define SA struct sockaddr
@@ -56,8 +55,7 @@ int main(int argc, char** argv)
         exit(0);
     }
 
-    sprintf(send_line, "GET / HTTP/1.1\r\n\r\n");
-    send_bytes = sizeof(send_line);
+    send_bytes = sprintf(send_line, "GET / HTTP/1.1\r\n\r\n");
     printf("Sending...\n");
     if(write(sock_fd, send_line, send_bytes) != send_bytes)
     {
