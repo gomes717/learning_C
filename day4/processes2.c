@@ -16,7 +16,7 @@ int main()
     else
     {
         n = 6;
-        wait();
+        wait(NULL);
     }
 
 
